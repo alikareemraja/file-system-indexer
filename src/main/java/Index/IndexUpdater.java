@@ -5,8 +5,6 @@ import Util.LuceneConstants;
 import Util.Util;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
-import org.apache.lucene.document.Field;
-import org.apache.lucene.document.TextField;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
@@ -14,16 +12,24 @@ import org.apache.lucene.index.Term;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
-import javax.print.Doc;
 import java.io.*;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-public class IndexUpdater {
+/**
+ * Update index
+ */
+class IndexUpdater {
 
     private IndexWriter _writer;
 
-    public void updateDocument(File file, StandardAnalyzer analyzer) throws IOException {
+    /**
+     * Update the document in index
+     * @param file file on disk
+     * @param analyzer analyzer for tokenization
+     * @throws IOException index fails to update document
+     */
+    void updateDocument(File file, StandardAnalyzer analyzer) throws IOException {
 
 
         Directory index_directory = FSDirectory.open(Paths.get(Config.INDEX_LOCATION));
@@ -42,7 +48,13 @@ public class IndexUpdater {
 
     }
 
-    public void deleteDocument(String filePath, StandardAnalyzer analyzer) throws IOException {
+    /**
+     * delete document from index
+     * @param filePath path of file to be deleted from index
+     * @param analyzer analyzer for tokenization
+     * @throws IOException file fails to be deleted from index
+     */
+    void deleteDocument(String filePath, StandardAnalyzer analyzer) throws IOException {
 
 
         Directory index_directory = FSDirectory.open(Paths.get(Config.INDEX_LOCATION));
@@ -59,7 +71,13 @@ public class IndexUpdater {
 
     }
 
-    public void addDocuments(ArrayList<File> files, StandardAnalyzer analyzer) throws IOException {
+    /**
+     * add documents to the index
+     * @param files list of files to be added to index
+     * @param analyzer analyzer for tokenization
+     * @throws IOException files failed to be added to the index
+     */
+    void addDocuments(ArrayList<File> files, StandardAnalyzer analyzer) throws IOException {
 
 
         Directory index_directory = FSDirectory.open(Paths.get(Config.INDEX_LOCATION));

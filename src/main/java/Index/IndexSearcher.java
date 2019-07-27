@@ -21,14 +21,25 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class IndexSearcher {
+
+/**
+ * Perform searches on the index
+ */
+class IndexSearcher {
 
 
-
-    public List<Document> searchIndex(String queryString, FieldEnum Field, StandardAnalyzer analyzer) throws IOException, ParseException {
+    /**
+     * Perform searches on the index
+     * @param queryString query string
+     * @param Field field to be queried
+     * @param analyzer analyzer for tokenization
+     * @return list of matching documents
+     * @throws IOException if the search fails
+     * @throws ParseException if the query fails to be parsed
+     */
+     List<Document> searchIndex(String queryString, FieldEnum Field, StandardAnalyzer analyzer) throws IOException, ParseException {
 
         Query query = generateQuery(queryString, Field, analyzer);
-
         Directory index_directory = FSDirectory.open(Paths.get(Config.INDEX_LOCATION));
         IndexReader indexReader = DirectoryReader.open(index_directory);
         org.apache.lucene.search.IndexSearcher searcher = new org.apache.lucene.search.IndexSearcher(indexReader);
@@ -42,6 +53,14 @@ public class IndexSearcher {
 
     }
 
+    /**
+     * Depending on the Field to be searched, generate a query
+     * @param queryString query string
+     * @param Field field to be queried
+     * @param analyzer analyzer for tokenization
+     * @return query
+     * @throws ParseException if the querystring fails to parse
+     */
     private Query generateQuery(String queryString, FieldEnum Field, StandardAnalyzer analyzer) throws ParseException {
 
         if(Field == FieldEnum.CONTENTS){

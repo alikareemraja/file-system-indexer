@@ -4,7 +4,6 @@ import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
-import org.apache.lucene.queryparser.classic.QueryParser;
 
 import java.io.*;
 import java.io.FileReader;
@@ -12,6 +11,11 @@ import java.text.SimpleDateFormat;
 
 public class Util {
 
+    /**
+     * Map from enum to string
+     * @param fieldEnum enum
+     * @return string
+     */
     public static String getFieldMapping(FieldEnum fieldEnum){
 
         switch (fieldEnum){
@@ -27,6 +31,12 @@ public class Util {
         return null;
     }
 
+    /**
+     * create a lucene document from file
+     * @param file file to be stored
+     * @return lucene document
+     * @throws IOException failed to create document
+     */
     public static Document createDocument(File file) throws IOException {
         Reader reader = new FileReader(file);
 

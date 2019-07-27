@@ -1,12 +1,8 @@
 package Index;
 
 import Util.Config;
-import Util.LuceneConstants;
 import Util.Util;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
-import org.apache.lucene.document.Document;
-import org.apache.lucene.document.Field;
-import org.apache.lucene.document.TextField;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
@@ -18,11 +14,19 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class IndexCreator {
+/**
+ * Create index from scratch
+ */
+class IndexCreator {
 
     private IndexWriter _writer;
 
-    public void createIndex(StandardAnalyzer analyzer) throws Exception {
+    /**
+     * Create index from scratch
+     * @param analyzer analyzer for tokenization
+     * @throws Exception if the index fails to be created
+     */
+    void createIndex(StandardAnalyzer analyzer) throws Exception {
 
 
             if(Config.INDEX_LOCATION.isEmpty()){
@@ -49,6 +53,10 @@ public class IndexCreator {
 
     }
 
+    /**
+     * Walk the directory and add document
+     * @param directory directory to be walked
+     */
     private void indexDirectory(String directory){
         try{
             Files.find(Paths.get(directory),

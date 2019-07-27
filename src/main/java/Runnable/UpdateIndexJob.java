@@ -19,14 +19,21 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UpdateIndex implements Runnable {
+/**
+ * Recurrent job to update index
+ */
+public class UpdateIndexJob implements Runnable {
 
     private IndexController _index;
     private ArrayList<File> _toAdd;
 
-    public UpdateIndex(){
+    public UpdateIndexJob(){
         _index = new IndexController();
     }
+
+    /**
+     * runnable function called when a new thread is made
+     */
     @Override
     public void run() {
 
@@ -35,7 +42,7 @@ public class UpdateIndex implements Runnable {
 
         for (String directory : Config.FILES_DIRECTORIES)
         {
-            _toAdd = new ArrayList<File>();
+            _toAdd = new ArrayList<>();
             try {
 
                 walkDirectoryForUpdates(directory);
@@ -45,7 +52,7 @@ public class UpdateIndex implements Runnable {
                     _index.addDocuments(_toAdd);
                 }
 
-                walkDirectoryForDeletions(directory);
+                walkDirectoryForDeletions();
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -54,7 +61,11 @@ public class UpdateIndex implements Runnable {
 
     }
 
-    private void walkDirectoryForDeletions(String directory) throws IOException {
+    /**
+     * Walk the directory and find files to delete
+     * @throws IOException if file cannot be deleted from index
+     */
+    private void walkDirectoryForDeletions() throws IOException {
         Directory index_directory = FSDirectory.open(Paths.get(Config.INDEX_LOCATION));
         IndexReader reader = DirectoryReader.open(index_directory);
         for (int i=0; i<reader.maxDoc(); i++) {
@@ -69,6 +80,11 @@ public class UpdateIndex implements Runnable {
         }
     }
 
+    /**
+     * Walk the directory and find files to be updated
+     * @param directory directory to walk
+     * @throws IOException if file cannot be deleted from index
+     */
     private void walkDirectoryForUpdates(String directory) throws IOException {
         Files.find(Paths.get(directory),
                 Integer.MAX_VALUE,
@@ -98,6 +114,12 @@ public class UpdateIndex implements Runnable {
                 });
     }
 
+    /**
+     * check if document has been modified since being added to the index
+     * @param document document in index
+     * @param file file on disk
+     * @return boolean
+     */
     private boolean isDocumentModified(Document document, File file){
         String recordDate = document.getField(LuceneConstants.MODIFIED_DATE).stringValue();
         String dateNow = new SimpleDateFormat(Config.DATE_FORMAT).format(file.lastModified());
