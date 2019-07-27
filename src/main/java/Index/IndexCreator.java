@@ -1,6 +1,8 @@
 package Index;
 
 import Util.Config;
+import Util.LuceneConstants;
+import Util.Util;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
@@ -12,34 +14,39 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.text.SimpleDateFormat;
 
 public class IndexCreator {
 
-    IndexWriter _writer;
+    private IndexWriter _writer;
 
-    public void createIndex(StandardAnalyzer analyzer) throws IOException {
+    public void createIndex(StandardAnalyzer analyzer) throws Exception {
 
-        Directory index_directory = FSDirectory.open(Paths.get(Config.INDEX_LOCATION));
 
-        if(DirectoryReader.indexExists(index_directory)){
-            return;
-        }
+            if(Config.INDEX_LOCATION.isEmpty()){
+                throw new Exception("Index location not specified");
+            }
 
-        _writer = new IndexWriter(index_directory, new IndexWriterConfig(analyzer));
+            Directory index_directory = FSDirectory.open(Paths.get(Config.INDEX_LOCATION));
 
-        for (String directory : Config.FILES_DIRECTORIES)
-        {
-            indexDirectory(directory);
+            if(DirectoryReader.indexExists(index_directory)){
+                return;
+            }
 
-        }
+            _writer = new IndexWriter(index_directory, new IndexWriterConfig(analyzer));
 
-        _writer.close();
+            for (String directory : Config.FILES_DIRECTORIES)
+            {
+                indexDirectory(directory);
+
+            }
+
+            _writer.close();
+
+
+
     }
 
     private void indexDirectory(String directory){
@@ -52,15 +59,8 @@ public class IndexCreator {
                         try {
 
                             File file = iterator.toFile();
-                            Document document = new Document();
 
-                            String path = file.getCanonicalPath();
-                            document.add(new TextField(Config.FIELD_PATH, path, Field.Store.YES));
-                            document.add(new TextField(Config.FIELD_MODIFIED_DATE, new SimpleDateFormat(Config.DATE_FORMAT).format(file.lastModified()), Field.Store.YES));
-                            Reader reader = new FileReader(file);
-                            document.add(new TextField(Config.FIELD_CONTENTS, reader));
-
-                            _writer.addDocument(document);
+                            _writer.addDocument(Util.createDocument(file));
 
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -73,4 +73,5 @@ public class IndexCreator {
         }
 
     }
+
 }
