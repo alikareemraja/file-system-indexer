@@ -1,9 +1,9 @@
-package Index;
+package Indexer.Index;
 
-import Util.Config;
-import Util.LuceneConstants;
-import Util.Util;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import Indexer.Util.Config;
+import Indexer.Util.LuceneConstants;
+import Indexer.Util.Util;
+import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexWriter;
@@ -29,7 +29,7 @@ class IndexUpdater {
      * @param analyzer analyzer for tokenization
      * @throws IOException index fails to update document
      */
-    void updateDocument(File file, StandardAnalyzer analyzer) throws IOException {
+    void updateDocument(File file, Analyzer analyzer) throws IOException {
 
 
         Directory index_directory = FSDirectory.open(Paths.get(Config.INDEX_LOCATION));
@@ -54,13 +54,13 @@ class IndexUpdater {
      * @param analyzer analyzer for tokenization
      * @throws IOException file fails to be deleted from index
      */
-    void deleteDocument(String filePath, StandardAnalyzer analyzer) throws IOException {
+    void deleteDocument(String filePath, Analyzer analyzer) throws Exception {
 
 
         Directory index_directory = FSDirectory.open(Paths.get(Config.INDEX_LOCATION));
 
-        if(DirectoryReader.indexExists(index_directory)){
-            return;
+        if(!DirectoryReader.indexExists(index_directory)){
+            throw new Exception("Index does not exist");
         }
 
         _writer = new IndexWriter(index_directory, new IndexWriterConfig(analyzer));
@@ -77,14 +77,10 @@ class IndexUpdater {
      * @param analyzer analyzer for tokenization
      * @throws IOException files failed to be added to the index
      */
-    void addDocuments(ArrayList<File> files, StandardAnalyzer analyzer) throws IOException {
+    void addDocuments(ArrayList<File> files, Analyzer analyzer) throws IOException {
 
 
         Directory index_directory = FSDirectory.open(Paths.get(Config.INDEX_LOCATION));
-
-        if(DirectoryReader.indexExists(index_directory)){
-            return;
-        }
 
         _writer = new IndexWriter(index_directory, new IndexWriterConfig(analyzer));
 

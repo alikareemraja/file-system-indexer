@@ -1,4 +1,4 @@
-package Util;
+package Indexer.Util;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
@@ -17,6 +17,9 @@ public class Config {
     public static long INITIAL_DELAY;
     // SUBSEQUENT DELAY FOR SCHEDULER
     public static long RECURRENT_DELAY;
+
+    // Type of analyzer to be created
+    public static AnalyzerEnum ANALYZER_TYPE;
 
     // FORMAT TO STORE DATE IN
     public static final String DATE_FORMAT = "MM-dd-yyyy HH:mm:ss";

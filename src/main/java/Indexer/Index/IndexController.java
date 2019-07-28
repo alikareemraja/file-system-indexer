@@ -1,8 +1,13 @@
-package Index;
+package Indexer.Index;
 
 
-import Util.Config;
-import Util.FieldEnum;
+import Indexer.Util.Config;
+import Indexer.Util.FieldEnum;
+import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.core.KeywordAnalyzer;
+import org.apache.lucene.analysis.core.SimpleAnalyzer;
+import org.apache.lucene.analysis.core.StopAnalyzer;
+import org.apache.lucene.analysis.core.WhitespaceAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 
@@ -11,26 +16,50 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-import Runnable.UpdateIndexJob;
+import java.util.concurrent.ScheduledFuture;
 
+import Indexer.Runnable.UpdateIndexJob;
 
 /**
  * Internal controller responsible for all things Lucene
  */
 public class IndexController {
 
-    private StandardAnalyzer _analyzer;
+    private Analyzer _analyzer;
     private IndexCreator _indexCreator;
     private IndexSearcher _indexSearcher;
     private IndexUpdater _indexUpdater;
+    private ScheduledExecutorService _scheduler;
+    private ScheduledFuture<?> _indexUpdateTask;
+    private boolean _indexCreated = false;
 
 
     public IndexController() {
+
+        switch (Config.ANALYZER_TYPE){
+            case STANDARD:
+                _analyzer = new StandardAnalyzer();
+                break;
+            case STOP:
+                _analyzer = new StopAnalyzer();
+                break;
+            case SIMPLE:
+                _analyzer = new SimpleAnalyzer();
+                break;
+            case WHITESPACE:
+                _analyzer = new WhitespaceAnalyzer();
+                break;
+            case KEYWORD:
+                _analyzer = new KeywordAnalyzer();
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + Config.ANALYZER_TYPE);
+        }
         _analyzer = new StandardAnalyzer();
         _indexCreator = new IndexCreator();
         _indexSearcher = new IndexSearcher();
         _indexUpdater = new IndexUpdater();
+        _scheduler = Executors.newScheduledThreadPool(1);
     }
 
 
@@ -41,10 +70,12 @@ public class IndexController {
     public void createIndex() {
         try {
             _indexCreator.createIndex(_analyzer);
-
+            _indexCreated = true;
+            System.out.println("Index successfully created");
             // Need only one thread
-            ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-            scheduler.scheduleAtFixedRate(new UpdateIndexJob(), Config.INITIAL_DELAY, Config.RECURRENT_DELAY, Config.TIME_UNIT);
+
+            _indexUpdateTask = _scheduler.scheduleAtFixedRate(new UpdateIndexJob(), Config.INITIAL_DELAY, Config.RECURRENT_DELAY, Config.TIME_UNIT);
+            System.out.println("Index updater is scheduled to run.");
         } catch (Exception e) {
             System.out.println("Failed to create Index");
         }
@@ -111,5 +142,25 @@ public class IndexController {
             System.out.println("Failed to search");
         }
         return null;
+    }
+
+    /**
+     * cancel update jobs upon shutdown
+     */
+    public boolean shutDown() {
+        if(_indexUpdateTask == null){
+            return false;
+        }
+        _indexUpdateTask.cancel(false);
+        _scheduler.shutdownNow();
+        return true;
+    }
+
+    public boolean is_indexCreated() {
+        return _indexCreated;
+    }
+
+    public void set_indexCreated(boolean _indexCreated) {
+        this._indexCreated = _indexCreated;
     }
 }

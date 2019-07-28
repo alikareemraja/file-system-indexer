@@ -1,9 +1,9 @@
-package Runnable;
+package Indexer.Runnable;
 
-import Index.IndexController;
-import Util.Config;
-import Util.FieldEnum;
-import Util.LuceneConstants;
+import Indexer.Index.IndexController;
+import Indexer.Util.Config;
+import Indexer.Util.FieldEnum;
+import Indexer.Util.LuceneConstants;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;

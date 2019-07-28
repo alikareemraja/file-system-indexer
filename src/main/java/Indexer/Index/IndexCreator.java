@@ -1,8 +1,8 @@
-package Index;
+package Indexer.Index;
 
-import Util.Config;
-import Util.Util;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import Indexer.Util.Config;
+import Indexer.Util.Util;
+import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
@@ -26,7 +26,7 @@ class IndexCreator {
      * @param analyzer analyzer for tokenization
      * @throws Exception if the index fails to be created
      */
-    void createIndex(StandardAnalyzer analyzer) throws Exception {
+    void createIndex(Analyzer analyzer) throws Exception {
 
 
             if(Config.INDEX_LOCATION.isEmpty()){

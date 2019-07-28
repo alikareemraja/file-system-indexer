@@ -1,4 +1,4 @@
-package Util;
+package Indexer.Util;
 
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;

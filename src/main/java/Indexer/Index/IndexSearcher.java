@@ -1,8 +1,9 @@
-package Index;
+package Indexer.Index;
 
-import Util.Config;
-import Util.FieldEnum;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import Indexer.Util.Config;
+import Indexer.Util.FieldEnum;
+import Indexer.Util.Util;
+import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
@@ -37,7 +38,7 @@ class IndexSearcher {
      * @throws IOException if the search fails
      * @throws ParseException if the query fails to be parsed
      */
-     List<Document> searchIndex(String queryString, FieldEnum Field, StandardAnalyzer analyzer) throws IOException, ParseException {
+     List<Document> searchIndex(String queryString, FieldEnum Field, Analyzer analyzer) throws IOException, ParseException {
 
         Query query = generateQuery(queryString, Field, analyzer);
         Directory index_directory = FSDirectory.open(Paths.get(Config.INDEX_LOCATION));
@@ -61,12 +62,12 @@ class IndexSearcher {
      * @return query
      * @throws ParseException if the querystring fails to parse
      */
-    private Query generateQuery(String queryString, FieldEnum Field, StandardAnalyzer analyzer) throws ParseException {
+    private Query generateQuery(String queryString, FieldEnum Field, Analyzer analyzer) throws ParseException {
 
         if(Field == FieldEnum.CONTENTS){
-            return new QueryParser(Util.Util.getFieldMapping(Field), analyzer).parse(QueryParser.escape(queryString));
+            return new QueryParser(Util.getFieldMapping(Field), analyzer).parse(QueryParser.escape(queryString));
         }
-        else return new TermQuery(new Term(Util.Util.getFieldMapping(Field), queryString));
+        else return new TermQuery(new Term(Util.getFieldMapping(Field), queryString));
 
     }
 }
