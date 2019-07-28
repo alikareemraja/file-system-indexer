@@ -10,6 +10,9 @@ import java.util.concurrent.TimeUnit;
 
 import Indexer.Util.Config;
 
+/**
+ * public entry point for the library
+ */
 public class Indexer {
 
     private IndexController _index;
@@ -32,6 +35,11 @@ public class Indexer {
         _index.createIndex();
     }
 
+    /**
+     * public method to query the index
+     * @param queryString
+     * @return
+     */
     public List<Document> searchIndex(String queryString) {
         try {
             return _index.searchIndex(queryString, FieldEnum.CONTENTS);
@@ -41,37 +49,13 @@ public class Indexer {
         return null;
     }
 
+    /**
+     * call to shutdown use of index
+     * @return
+     */
     public boolean closeIndexer(){
         return _index.shutDown();
     }
-
-    /*public static void main(String[] args ){
-
-        String[] directories = {"/home/alikareemraja/TUM/dump", "/home/alikareemraja/TUM/dump 2"};
-        Config.FILES_DIRECTORIES.add("/home/alikareemraja/TUM/dump");
-        Config.FILES_DIRECTORIES.add("/home/alikareemraja/TUM/dump 2");
-        Config.INDEX_LOCATION = "/home/alikareemraja/TUM/index";
-
-        Config.INITIAL_DELAY = 1;
-        Config.RECURRENT_DELAY = 1;
-        Config.TIME_UNIT = TimeUnit.MINUTES;
-
-        Config.ANALYZER_TYPE = AnalyzerEnum.STANDARD;
-
-                
-        try{
-            IndexController index = new IndexController();
-            index.createIndex();
-            List<Document> hits =  index.searchIndex("Gyldendal", FieldEnum.CONTENTS);
-            String field = hits.get(0).getField("modified").stringValue();
-
-            System.out.println("So far so good");
-        }
-        catch (Exception e){
-            System.out.println("BRUH ...");
-        }
-
-    }*/
 
 
 }

@@ -1,7 +1,5 @@
 package Indexer.Index;
 
-
-import Indexer.Index.IndexController;
 import Indexer.Util.AnalyzerEnum;
 import Indexer.Util.Config;
 import Indexer.Util.FieldEnum;
@@ -27,6 +25,7 @@ public class IndexCreatorTest {
 
         Config.FILES_DIRECTORIES.add("src/test/resources/dir1");
         Config.FILES_DIRECTORIES.add("src/test/resources/dir2");
+
 
         Config.INDEX_LOCATION = "src/test/resources/index";
 

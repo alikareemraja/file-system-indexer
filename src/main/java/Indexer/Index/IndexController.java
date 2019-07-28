@@ -55,7 +55,6 @@ public class IndexController {
             default:
                 throw new IllegalStateException("Unexpected value: " + Config.ANALYZER_TYPE);
         }
-        _analyzer = new StandardAnalyzer();
         _indexCreator = new IndexCreator();
         _indexSearcher = new IndexSearcher();
         _indexUpdater = new IndexUpdater();

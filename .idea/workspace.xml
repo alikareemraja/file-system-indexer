@@ -1,32 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8939d02c-e819-4c86-8eb9-20adfe267204" name="Default Changelist" comment="Working version without tests">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Indexer/Util/AnalyzerEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Indexer/Index/IndexCreatorTest.java" afterDir="false" />
+    <list default="true" id="8939d02c-e819-4c86-8eb9-20adfe267204" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Index/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Indexer/Index/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Index/IndexCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Indexer/Index/IndexCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Index/IndexSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Indexer/Index/IndexSearcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Index/IndexUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Indexer/Index/IndexUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Indexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Indexer/Indexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Runnable/UpdateIndexJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Indexer/Runnable/UpdateIndexJob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Util/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Indexer/Util/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Util/FieldEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Indexer/Util/FieldEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Util/LuceneConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Indexer/Util/LuceneConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Indexer/Util/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Index/IndexCreatorTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Index/Index.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Index/IndexCreator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Index/IndexSearcher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Runnable/VerifyFileSystem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Util/Config.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Util/FieldEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Util/FileReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Util/Util$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Util/Util.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Indexer/Index/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Indexer/Index/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Indexer/Indexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Indexer/Indexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Indexer/Index/IndexCreatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Indexer/Index/IndexCreatorTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Indexer/Index/IndexCreatorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-286">
-              <caret line="39" column="15" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
+            <state relative-caret-position="-255">
+              <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,14 +35,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Indexer/Index/IndexController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="961">
-              <caret line="105" selection-start-line="105" selection-end-line="105" />
+            <state relative-caret-position="113">
+              <caret line="138" selection-start-line="138" selection-end-line="138" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4650#4651#0" expanded="true" />
-                <element signature="e#4686#4687#0" expanded="true" />
-                <element signature="e#4745#4746#0" expanded="true" />
-                <element signature="e#4795#4796#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Indexer/Indexer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="19" column="144" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="144" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1358#1359#0" expanded="true" />
+                <element signature="e#1398#1399#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,8 +61,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Indexer/Index/IndexSearcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="42" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="262">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,7 +73,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Indexer/Index/IndexCreator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="105">
               <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -105,7 +94,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Indexer/Index/IndexUpdater.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
+            <state relative-caret-position="855">
               <caret line="71" selection-start-line="71" selection-end-line="71" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -117,8 +106,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Indexer/Util/AnalyzerEnum.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="24" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="24" />
+            <state relative-caret-position="120">
+              <caret line="8" column="1" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="8" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -173,10 +162,10 @@
         <option value="$PROJECT_DIR$/src/main/java/Indexer.java" />
         <option value="$PROJECT_DIR$/src/test/java/Runnable/UpdateIndexJobTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Runnable/UpdateIndexJob.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Indexer/Indexer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Indexer/Index/IndexController.java" />
         <option value="$PROJECT_DIR$/src/test/java/Index/IndexCreatorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Indexer/Index/IndexUpdater.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Indexer/Indexer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Indexer/Index/IndexController.java" />
         <option value="$PROJECT_DIR$/src/test/java/Indexer/Index/IndexCreatorTest.java" />
       </list>
     </option>
@@ -246,21 +235,10 @@
               <item name="indexer" type="b2602c69:ProjectViewProjectNode" />
               <item name="indexer" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="indexer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="indexer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="indexer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="indexer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="Indexer" type="462c0819:PsiDirectoryNode" />
+              <item name="Util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -314,8 +292,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.IndexCreatorTest.shutDown_Fails">
-    <configuration name="IndexCreatorTest.addDocuments" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.IndexCreatorTest.searchIndex">
+    <configuration name="IndexCreatorTest.createIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IndexingLibrary" />
       <extension name="coverage">
         <pattern>
@@ -325,7 +303,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="Indexer.Index" />
       <option name="MAIN_CLASS_NAME" value="Indexer.Index.IndexCreatorTest" />
-      <option name="METHOD_NAME" value="addDocuments" />
+      <option name="METHOD_NAME" value="createIndex" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -397,11 +375,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.IndexCreatorTest.searchIndex" />
+        <item itemvalue="JUnit.IndexCreatorTest.createIndex" />
         <item itemvalue="JUnit.IndexCreatorTest.shutDown_Fails" />
         <item itemvalue="JUnit.IndexCreatorTest.shutDown" />
         <item itemvalue="JUnit.IndexCreatorTest.deleteDocument" />
-        <item itemvalue="JUnit.IndexCreatorTest.addDocuments" />
-        <item itemvalue="JUnit.IndexCreatorTest.searchIndex" />
       </list>
     </recent_temporary>
   </component>
@@ -430,7 +408,8 @@
       <workItem from="1564335950859" duration="380000" />
       <workItem from="1564336496291" duration="35000" />
       <workItem from="1564336642929" duration="49000" />
-      <workItem from="1564336935169" duration="2238000" />
+      <workItem from="1564336935169" duration="2324000" />
+      <workItem from="1564351259489" duration="1304000" />
     </task>
     <task id="LOCAL-00001" summary="Working version without tests">
       <created>1564251319992</created>
@@ -446,31 +425,17 @@
       <option name="project" value="LOCAL" />
       <updated>1564253029905</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Test cases, fixed bugs">
+      <created>1564339228850</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1564339228851</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="IndexCreatorTest_deleteDocument - 2019.07.28 at 20h 31m 01s.xml">
-      <configuration name="IndexCreatorTest.deleteDocument" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IndexCreatorTest_deleteDocument - 2019.07.28 at 20h 31m 34s.xml">
-      <configuration name="IndexCreatorTest.deleteDocument" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IndexCreatorTest_deleteDocument - 2019.07.28 at 20h 32m 08s.xml">
-      <configuration name="IndexCreatorTest.deleteDocument" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IndexCreatorTest_deleteDocument - 2019.07.28 at 20h 32m 18s.xml">
-      <configuration name="IndexCreatorTest.deleteDocument" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IndexCreatorTest_deleteDocument - 2019.07.28 at 20h 32m 33s.xml">
-      <configuration name="IndexCreatorTest.deleteDocument" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IndexCreatorTest - 2019.07.28 at 20h 33m 25s.xml">
-      <configuration name="IndexCreatorTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IndexCreatorTest_createIndex - 2019.07.28 at 20h 38m 40s.xml">
-      <configuration name="IndexCreatorTest.createIndex" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="IndexCreatorTest_searchIndex - 2019.07.28 at 20h 38m 47s.xml">
       <configuration name="IndexCreatorTest.searchIndex" configurationId="JUnit" />
     </history-entry>
@@ -480,15 +445,36 @@
     <history-entry file="IndexCreatorTest_deleteDocument - 2019.07.28 at 20h 39m 06s.xml">
       <configuration name="IndexCreatorTest.deleteDocument" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="IndexCreatorTest_shutDown - 2019.07.28 at 20h 39m 35s.xml">
+      <configuration name="IndexCreatorTest.shutDown" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IndexCreatorTest_shutDown_Fails - 2019.07.28 at 20h 39m 37s.xml">
+      <configuration name="IndexCreatorTest.shutDown_Fails" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IndexCreatorTest_createIndex - 2019.07.29 at 00h 09m 02s.xml">
+      <configuration name="IndexCreatorTest.createIndex" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IndexCreatorTest_searchIndex - 2019.07.29 at 00h 09m 11s.xml">
+      <configuration name="IndexCreatorTest.searchIndex" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IndexCreatorTest_searchIndex - 2019.07.29 at 00h 09m 54s.xml">
+      <configuration name="IndexCreatorTest.searchIndex" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IndexCreatorTest_searchIndex - 2019.07.29 at 00h 10m 15s.xml">
+      <configuration name="IndexCreatorTest.searchIndex" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="IndexCreatorTest_searchIndex - 2019.07.29 at 00h 11m 32s.xml">
+      <configuration name="IndexCreatorTest.searchIndex" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37284000" />
+    <option name="totallyTimeSpent" value="38674000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3216281" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3272147" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -497,8 +483,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32899022" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39739415" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32899022" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39739415" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -525,17 +511,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Working version without tests" />
     <MESSAGE value="Added javadocs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added javadocs" />
+    <MESSAGE value="Test cases, fixed bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test cases, fixed bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Indexer/Indexer.java</url>
-          <line>63</line>
-          <properties />
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Indexer/Runnable/UpdateIndexJob.java</url>
           <line>47</line>
@@ -547,6 +528,12 @@
           <line>94</line>
           <properties />
           <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Indexer/Index/IndexCreatorTest.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -605,22 +592,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Indexer/Indexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1176#1177#0" expanded="true" />
-            <element signature="e#1216#1217#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Indexer/Runnable/UpdateIndexJob.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Indexer/IndexerTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/Indexer/Runnable/UpdateIndexJobTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Indexer/Index/IndexCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -631,10 +618,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Indexer/Util/AnalyzerEnum.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Indexer/Index/IndexUpdater.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="24" />
+        <state relative-caret-position="855">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -645,30 +635,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Indexer/Index/IndexCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Indexer/Index/IndexSearcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="262">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Indexer/Index/IndexUpdater.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/Indexer/Index/IndexCreatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        <state relative-caret-position="-255">
+          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -677,38 +657,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Indexer/Index/IndexController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="961">
-          <caret line="105" selection-start-line="105" selection-end-line="105" />
+        <state relative-caret-position="113">
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4650#4651#0" expanded="true" />
-            <element signature="e#4686#4687#0" expanded="true" />
-            <element signature="e#4745#4746#0" expanded="true" />
-            <element signature="e#4795#4796#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Indexer/IndexerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Indexer/Runnable/UpdateIndexJobTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Indexer/Util/AnalyzerEnum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <caret line="8" column="1" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="8" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Indexer/Index/IndexCreatorTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Indexer/Indexer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-286">
-          <caret line="39" column="15" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
+        <state relative-caret-position="105">
+          <caret line="19" column="144" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="144" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1398#1399#0" expanded="true" />
           </folding>
         </state>
       </provider>
